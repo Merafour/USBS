@@ -1,0 +1,26 @@
+;/******************** (C) COPYRIGHT 2015 merafour ********************
+;* Author             : 冷月追风@merafour.blog.163.com
+;* Version            : V1.0.0
+;* Date               : 6/12/2015
+;* Description        : startup.
+;********************************************************************************
+;* merafour.blog.163.com
+;* 深圳市乐迪电子有限公司:www.radiolink.com.cn
+;*******************************************************************************/
+; | code:24K
+; | FAT32+MAC+RAM:40K
+LR_IROM1 0x20000000 0x00006000  {    ; load region size_region
+  ER_IROM2 0x20000000 0x00000200  {  ; load address = execution address
+   .ANY (.config)
+  }
+  ER_IROM1 0x20000200 0x00005E00  {  ; load address = execution address
+   *.o (RESET, +First)
+   *(InRoot$$Sections)
+   .ANY (+RO)
+;   .ANY (.ecode)
+  }
+  RW_IRAM1 0x20006000 0x0000A000  {  ; RW data
+   .ANY (+RW +ZI)
+  }
+}
+
