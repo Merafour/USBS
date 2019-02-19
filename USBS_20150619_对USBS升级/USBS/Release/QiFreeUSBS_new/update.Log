@@ -1,0 +1,24 @@
+Log.......
+
+[MainWindow::MainWindow(QWidget*) @51] Create DownLoad Thread
+[MainWindow::MainWindow(QWidget*) @53] configuration UI
+[void MainWindow::setHeight() @254] setHeight[void MainWindow::setHeight() @261] QiFree USBS Sign :DiaEnable
+[void MainWindow::setHeight() @268] default_out :DiaEnable
+fflush!
+[QiFreeIO_Set @288] GPIOA:0000 Enable:0000
+[QiFreeIO_Set @288] GPIOB:0000 Enable:0000
+[QiFreeIO_Set @288] GPIOC:0000 Enable:0000
+[QiFreeIO_Set @288] GPIOD:0000 Enable:0000
+[QiFreeIO_Set @288] GPIOE:0000 Enable:0000
+[QiFreeIO_Set @288] GPIOF:0000 Enable:0000
+[QiFreeIO_Set @288] GPIOG:0000 Enable:0000
+[QiFreeIO_Set @292] KEY :GPIOA_15
+[QiFreeIO_Set @293] LED1:GPIOA_8
+[QiFreeIO_Set @294] LED2:GPIOD_2
+[QiFreeIO_Set @295] KEY :0000000F
+[QiFreeIO_Set @296] LED1:FFFF0008
+[QiFreeIO_Set @297] LED2:FFFF0002
+fflush!
+[virtual MainWindow::~MainWindow() @168] ~MainWindow
+
+Log end!

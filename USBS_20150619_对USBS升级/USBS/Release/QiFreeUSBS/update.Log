@@ -1,0 +1,180 @@
+Log.......
+
+[MainWindow::MainWindow(QWidget*) @50] Create DownLoad Thread
+[MainWindow::MainWindow(QWidget*) @52] configuration UI
+[void MainWindow::setHeight() @241] setHeight[void MainWindow::setHeight() @247] QiFree USBS Sign :DiaEnable
+[void MainWindow::setHeight() @254] default_out :DiaEnable
+fflush!
+[QiFreeIO_Set @279] GPIOA:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOB:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOC:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOD:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOE:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOF:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOG:0000 Enable:0000
+[QiFreeIO_Set @283] KEY :GPIOA_15
+[QiFreeIO_Set @284] LED1:GPIOA_8
+[QiFreeIO_Set @285] LED2:GPIOD_2
+[QiFreeIO_Set @286] KEY :0000000F
+[QiFreeIO_Set @287] LED1:FFFF0008
+[QiFreeIO_Set @288] LED2:FFFF0002
+fflush!
+[void MainWindow::on_checkBox_Swd_clicked() @572] SWD :DiaEnable
+fflush!
+[void MainWindow::on_Qi_activated(int) @530] QiFree: Update
+fflush!
+[void GPIO_Choose::on_KEY_Low_clicked() @398] KEY :Low
+fflush!
+[void MainWindow::on_pushButton_Choose_clicked() @291] radioButton_bin!
+[void MainWindow::on_pushButton_Choose_clicked() @320] ch:F:/USBS/Release/QiFreeUSBS/USBS_Update_QiFreeUSBS_V1.20.8_Free.bin
+[void MainWindow::on_pushButton_Choose_clicked() @321] 中文:汉字
+[set_filesrc @116] filesrc:F:/USBS/Release/QiFreeUSBS/USBS_Update_QiFreeUSBS_V1.20.8_Free.bin
+[set_filedes @244] filedes:USBS_USBS_Update_QiFreeUSBS_V1.20.8_Free.bin
+[QiFreeSWD_Set @314] SWD:DisEnable
+[set_license @193] User license:0X00000000
+fflush!
+[QiFreeIO_Set @279] GPIOA:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOB:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOC:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOD:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOE:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOF:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOG:0000 Enable:0000
+[QiFreeIO_Set @283] KEY :GPIOD_6
+[QiFreeIO_Set @284] LED1:GPIOC_12
+[QiFreeIO_Set @285] LED2:GPIOA_13
+[QiFreeIO_Set @286] KEY :FFFF0006
+[QiFreeIO_Set @287] LED1:FFFF000C
+[QiFreeIO_Set @288] LED2:FFFF000D
+fflush!
+[set_signDate @259] signDate:2015.04.04 20:54
+fflush!
+[void MainWindow::on_pushButton_Download_clicked() @364] Signiture 1...
+fflush!
+[Create_QiFree_Update @858] uid1:0X05D7FF32
+[Create_QiFree_Update @859] uid2:0X38315841
+[Create_QiFree_Update @860] uid3:0X43015421
+[Create_QiFree_Update @861] Date: 20:52:22--Apr  4 2015
+[Create_QiFree_Update @862] read:F:/USBS/Release/QiFreeUSBS/USBS_Update_QiFreeUSBS_V1.20.8_Free.bin ...
+[read_bin @445] read size:39320 ...
+[Create_QiFree_Update @866] read down!
+[Create_QiFree_Update @875] Config Board...
+[Insert256B @504] SWD:DisEnable
+[Insert256B @505] Erase:DisEnable
+[Insert256B @511] memory:0X00000100
+[Insert256B @512] memory[2]:256KB
+[QiFreeIO_InsertConfig @358] KEY :GPIOD_6
+[QiFreeIO_InsertConfig @359] LED1:GPIOC_12
+[QiFreeIO_InsertConfig @360] LED2:GPIOA_13
+fflush!
+[Insert256B @516] KEY :FFFF0006
+[Insert256B @517] LED1:FFFF000C
+[Insert256B @518] LED2:FFFF000D
+[Create_QiFree_Update @893] write:USBS_USBS_Update_QiFreeUSBS_V1.20.8_Free.bin ...
+[Create_QiFree_Update @898] write size:39320 ...
+[Create_QiFree_Update @905] write down!
+fflush!
+[void MainWindow::on_pushButton_Choose_clicked() @291] radioButton_bin!
+[void MainWindow::on_pushButton_Choose_clicked() @320] ch:F:/USBS/Release/QiFreeUSBS/USBS_Update_QiFreeUSBS_V1.20.8_Beta.bin
+[void MainWindow::on_pushButton_Choose_clicked() @321] 中文:汉字
+[set_filesrc @116] filesrc:F:/USBS/Release/QiFreeUSBS/USBS_Update_QiFreeUSBS_V1.20.8_Beta.bin
+[set_filedes @244] filedes:USBS_USBS_Update_QiFreeUSBS_V1.20.8_Beta.bin
+[QiFreeSWD_Set @314] SWD:DisEnable
+[set_license @193] User license:0X00000000
+fflush!
+[QiFreeIO_Set @279] GPIOA:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOB:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOC:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOD:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOE:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOF:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOG:0000 Enable:0000
+[QiFreeIO_Set @283] KEY :GPIOD_6
+[QiFreeIO_Set @284] LED1:GPIOC_12
+[QiFreeIO_Set @285] LED2:GPIOA_13
+[QiFreeIO_Set @286] KEY :FFFF0006
+[QiFreeIO_Set @287] LED1:FFFF000C
+[QiFreeIO_Set @288] LED2:FFFF000D
+fflush!
+[set_signDate @259] signDate:2015.04.04 20:55
+fflush!
+[void MainWindow::on_pushButton_Download_clicked() @364] Signiture 1...
+fflush!
+[Create_QiFree_Update @858] uid1:0X05D7FF32
+[Create_QiFree_Update @859] uid2:0X38315841
+[Create_QiFree_Update @860] uid3:0X43015421
+[Create_QiFree_Update @861] Date: 20:52:22--Apr  4 2015
+[Create_QiFree_Update @862] read:F:/USBS/Release/QiFreeUSBS/USBS_Update_QiFreeUSBS_V1.20.8_Beta.bin ...
+[read_bin @445] read size:40492 ...
+[Create_QiFree_Update @866] read down!
+[Create_QiFree_Update @875] Config Board...
+[Insert256B @504] SWD:DisEnable
+[Insert256B @505] Erase:DisEnable
+[Insert256B @511] memory:0X00000100
+[Insert256B @512] memory[2]:256KB
+[QiFreeIO_InsertConfig @358] KEY :GPIOD_6
+[QiFreeIO_InsertConfig @359] LED1:GPIOC_12
+[QiFreeIO_InsertConfig @360] LED2:GPIOA_13
+fflush!
+[Insert256B @516] KEY :FFFF0006
+[Insert256B @517] LED1:FFFF000C
+[Insert256B @518] LED2:FFFF000D
+[Create_QiFree_Update @893] write:USBS_USBS_Update_QiFreeUSBS_V1.20.8_Beta.bin ...
+[Create_QiFree_Update @898] write size:40492 ...
+[Create_QiFree_Update @905] write down!
+fflush!
+[void MainWindow::on_Qi_activated(int) @530] QiFree: Beta
+fflush!
+[void MainWindow::on_pushButton_Choose_clicked() @291] radioButton_bin!
+[void MainWindow::on_pushButton_Choose_clicked() @320] ch:F:/USBS/Release/QiFreeUSBS/USBS_QiFreeUSBS_V1.20.8_Beta.bin
+[void MainWindow::on_pushButton_Choose_clicked() @321] 中文:汉字
+[set_filesrc @116] filesrc:F:/USBS/Release/QiFreeUSBS/USBS_QiFreeUSBS_V1.20.8_Beta.bin
+[set_filedes @244] filedes:USBS_USBS_QiFreeUSBS_V1.20.8_Beta.bin
+[QiFreeSWD_Set @314] SWD:DisEnable
+[set_license @193] User license:0X00000000
+fflush!
+[QiFreeIO_Set @279] GPIOA:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOB:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOC:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOD:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOE:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOF:0000 Enable:0000
+[QiFreeIO_Set @279] GPIOG:0000 Enable:0000
+[QiFreeIO_Set @283] KEY :GPIOD_6
+[QiFreeIO_Set @284] LED1:GPIOC_12
+[QiFreeIO_Set @285] LED2:GPIOA_13
+[QiFreeIO_Set @286] KEY :FFFF0006
+[QiFreeIO_Set @287] LED1:FFFF000C
+[QiFreeIO_Set @288] LED2:FFFF000D
+fflush!
+[set_signDate @259] signDate:2015.04.04 20:55
+fflush!
+[void MainWindow::on_pushButton_Download_clicked() @364] Signiture 0...
+fflush!
+[Create_QiFree_Beta @807] uid1:0X05D7FF32
+[Create_QiFree_Beta @808] uid2:0X38315841
+[Create_QiFree_Beta @809] uid3:0X43015421
+[Create_QiFree_Beta @810] Date: 20:52:22--Apr  4 2015
+fflush!
+[Create_QiFree_Beta @812] read:F:/USBS/Release/QiFreeUSBS/USBS_QiFreeUSBS_V1.20.8_Beta.bin ...
+[read_bin @445] read size:20012 ...
+[Create_QiFree_Beta @816] read down!
+[Create_QiFree_Beta @826] Config Board...
+[Insert256B @504] SWD:DisEnable
+[Insert256B @505] Erase:DisEnable
+[Insert256B @511] memory:0X00000100
+[Insert256B @512] memory[2]:256KB
+[QiFreeIO_InsertConfig @358] KEY :GPIOD_6
+[QiFreeIO_InsertConfig @359] LED1:GPIOC_12
+[QiFreeIO_InsertConfig @360] LED2:GPIOA_13
+fflush!
+[Insert256B @516] KEY :FFFF0006
+[Insert256B @517] LED1:FFFF000C
+[Insert256B @518] LED2:FFFF000D
+[Create_QiFree_Beta @829] write:USBS_USBS_QiFreeUSBS_V1.20.8_Beta.bin ...
+[Create_QiFree_Beta @832] write size:20012 ...
+[Create_QiFree_Beta @838] write down!
+fflush!
+[virtual MainWindow::~MainWindow() @155] ~MainWindow
+
+Log end!

@@ -1,0 +1,14 @@
+..\OBJ\flash_if.o: ..\dfu\flash_if.c
+..\OBJ\flash_if.o: ..\dfu\flash_if.h
+..\OBJ\flash_if.o: ..\dfu\platform_config.h
+..\OBJ\flash_if.o: ..\USER\stm32f10x.h
+..\OBJ\flash_if.o: ..\CORE\core_cm3.h
+..\OBJ\flash_if.o: C:\Keil\ARM\RV31\INC\stdint.h
+..\OBJ\flash_if.o: ..\USER\system_stm32f10x.h
+..\OBJ\flash_if.o: ..\USER\stm32f10x_conf.h
+..\OBJ\flash_if.o: ..\STM32F10x_FWLib\inc\stm32f10x_flash.h
+..\OBJ\flash_if.o: ..\USER\stm32f10x.h
+..\OBJ\flash_if.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
+..\OBJ\flash_if.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
+..\OBJ\flash_if.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
+..\OBJ\flash_if.o: ..\STM32F10x_FWLib\inc\misc.h

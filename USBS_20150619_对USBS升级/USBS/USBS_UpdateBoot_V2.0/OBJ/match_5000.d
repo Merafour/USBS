@@ -1,0 +1,17 @@
+..\OBJ\match_5000.o: ..\dfu\Match_5000.c
+..\OBJ\match_5000.o: ..\dfu\delay.h
+..\OBJ\match_5000.o: ..\USER\stm32f10x.h
+..\OBJ\match_5000.o: ..\CORE\core_cm3.h
+..\OBJ\match_5000.o: C:\Keil\ARM\RV31\INC\stdint.h
+..\OBJ\match_5000.o: ..\USER\system_stm32f10x.h
+..\OBJ\match_5000.o: ..\USER\stm32f10x_conf.h
+..\OBJ\match_5000.o: ..\STM32F10x_FWLib\inc\stm32f10x_flash.h
+..\OBJ\match_5000.o: ..\USER\stm32f10x.h
+..\OBJ\match_5000.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
+..\OBJ\match_5000.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
+..\OBJ\match_5000.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
+..\OBJ\match_5000.o: ..\STM32F10x_FWLib\inc\misc.h
+..\OBJ\match_5000.o: ..\dfu\usart.h
+..\OBJ\match_5000.o: C:\Keil\ARM\RV31\INC\stdio.h
+..\OBJ\match_5000.o: ..\dfu\sys.h
+..\OBJ\match_5000.o: ..\dfu\match.h

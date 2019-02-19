@@ -1,0 +1,178 @@
+#include "QiFreeIO.h"
+
+// LED初始化
+static void QiFree_led_Init(QiFreeIO *io)
+{
+	GPIO_InitTypeDef  GPIO_InitStructure;
+	//if(0==io->GPIOx) return; // 空的配置io->GPIOx
+	RCC_APB2PeriphClockCmd(io->RCC_APB2Periph, ENABLE);	 //使能PA,PD端口时钟
+	
+	GPIO_InitStructure.GPIO_Pin = io->Pin;				 //LED0-->PA.8 端口配置
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //推挽输出
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz
+	GPIO_Init(io->GPIOx, &GPIO_InitStructure);					 //根据设定参数初始化GPIOA.8
+	//GPIO_SetBits(io->GPIOx, io->Pin);						 //PA.8 输出高
+	GPIO_ResetBits(io->GPIOx, io->Pin);
+}
+// LED点亮,高电平点亮
+static void QiFree_led_on(QiFreeIO *io, int on)
+{
+	//GPIO_ResetBits(GPIOE,GPIO_Pin_1);//LED1 = 0;
+	//PEout(1) = (on&0x1);	
+	//if(0==io->GPIOx) return; // 空的配置io->GPIOx   
+#if 1
+//	on &= 0x1; // 1:LED亮
+//	on = ~on;
+	GPIO_WriteBit(io->GPIOx, io->Pin, on&0x1);
+#else
+	if(on&0x1) GPIO_ResetBits(io->GPIOx, io->Pin);
+	else GPIO_SetBits(io->GPIOx, io->Pin);
+#endif
+}
+// LED点亮,低电平点亮
+static void QiFree_led_on_low(QiFreeIO *io, int on)
+{
+	//GPIO_ResetBits(GPIOE,GPIO_Pin_1);//LED1 = 0;
+	//PEout(1) = (on&0x1);	   
+	//if(0==io->GPIOx) return; // 空的配置io->GPIOx
+#if 1
+	on &= 0x1; // 1:LED亮
+	on = ~on;
+	GPIO_WriteBit(io->GPIOx, io->Pin, on&0x1);
+#else
+	if(on&0x1) GPIO_ResetBits(io->GPIOx, io->Pin);
+	else GPIO_SetBits(io->GPIOx, io->Pin);
+#endif
+}
+// LED电平翻转
+static void QiFree_led_reversal(QiFreeIO *io)
+{
+	int on = 0;
+	//if(0==io->GPIOx) return; // 空的配置io->GPIOx
+	//GPIO_ResetBits(GPIOE,GPIO_Pin_1);//LED1 = 0;
+	//PEout(1) = (on&0x1);
+	//int on = GPIO_ReadInputDataBit(io->GPIOx, io->Pin);
+	on = GPIO_ReadOutputDataBit(io->GPIOx, io->Pin);
+#if 1
+	on &= 0x1; // 1:LED亮
+	on = ~on;
+	GPIO_WriteBit(io->GPIOx, io->Pin, on&0x1);
+#else
+	if(on&0x1) GPIO_ResetBits(io->GPIOx, io->Pin);
+	else GPIO_SetBits(io->GPIOx, io->Pin);
+#endif
+}
+
+// KEY初始化
+static void QiFree_key_Init(QiFreeIO *io)
+{
+	GPIO_InitTypeDef  GPIO_InitStructure;
+	//if(0==io->GPIOx) return; // 空的配置io->GPIOx
+	RCC_APB2PeriphClockCmd(io->RCC_APB2Periph, ENABLE);	 //使能PA,PD端口时钟
+
+ 	//RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOC,ENABLE);//使能PORTA,PORTC时钟
+	//GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);//关闭jtag，使能SWD，可以用SWD模式调试
+	
+	GPIO_InitStructure.GPIO_Pin = io->Pin;				 //PA15
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;        //设置成上拉输入
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz
+	GPIO_Init(io->GPIOx, &GPIO_InitStructure);					 //初始化GPIOA15
+}
+
+// KEY读取电平,高电平按下
+static uint8_t QiFree_key_down(QiFreeIO *io)
+{
+	uint8_t down = 0;
+	//if(0==io->GPIOx) return 0; // 空的配置io->GPIOx
+	down = GPIO_ReadInputDataBit(io->GPIOx, io->Pin);
+	//int on = GPIO_ReadOutputDataBit(io->GPIOx, io->Pin);
+	down &= 0x1; // 
+	return down;
+}
+// KEY读取电平,低电平按下
+static uint8_t QiFree_key_down_low(QiFreeIO *io)
+{
+	uint8_t down = 0;
+	//if(0==io->GPIOx) return 0; // 空的配置io->GPIOx
+	down = GPIO_ReadInputDataBit(io->GPIOx, io->Pin);
+	//int on = GPIO_ReadOutputDataBit(io->GPIOx, io->Pin);
+	down = ~down;
+	down &= 0x1; // 
+	return down;
+}
+
+/*
+ * 创建一个 IO操作对象, input表示 IO是输入还是输出, LED传递 0即输出, KEY传递 1即输入
+ */
+void newQiFree_ioObj(QiFree_ioObj *Qi, int led_low, int key_low)
+{
+	Qi->led_init = QiFree_led_Init;
+	Qi->key_init = QiFree_key_Init;
+	Qi->led_on = QiFree_led_on;
+	Qi->reversal = QiFree_led_reversal;
+	Qi->key_down = QiFree_key_down;
+	// LED低电平点亮
+	if(led_low) Qi->led_on = QiFree_led_on_low;
+	// KEY低电平有效
+	if(key_low) Qi->key_down = QiFree_key_down_low;
+}
+// IO配置定义
+static uint32_t QiFree_RCC_GPIOx[7]={
+	RCC_APB2Periph_GPIOA,
+	RCC_APB2Periph_GPIOB,
+	RCC_APB2Periph_GPIOC,
+	RCC_APB2Periph_GPIOD,
+	RCC_APB2Periph_GPIOE,
+	RCC_APB2Periph_GPIOF,
+	RCC_APB2Periph_GPIOG
+};
+static GPIO_TypeDef* QiFree_GPIOx[7] = {
+	GPIOA,
+	GPIOB,
+	GPIOC,
+	GPIOD,
+	GPIOE,
+	GPIOF,
+	GPIOG
+};
+static uint16_t QiFree_Pin[16] = {
+	GPIO_Pin_0,
+	GPIO_Pin_1,
+	GPIO_Pin_2,
+	GPIO_Pin_3,
+	GPIO_Pin_4,
+	GPIO_Pin_5,
+	GPIO_Pin_6,
+	GPIO_Pin_7,
+	GPIO_Pin_8,
+	GPIO_Pin_9,
+	GPIO_Pin_10,
+	GPIO_Pin_11,
+	GPIO_Pin_12,
+	GPIO_Pin_13,
+	GPIO_Pin_14,
+	GPIO_Pin_15
+};
+int QiFreeIO_config(uint32_t cfg[], QiFreeIO *io)
+{
+	// init
+	io->RCC_APB2Periph = 0;
+	io->GPIOx = 0;
+	io->Pin = 0;
+	// RCC_GPIOx
+	if(cfg[0]>=(sizeof(QiFree_RCC_GPIOx)/sizeof(QiFree_RCC_GPIOx[0]))) return -1;
+	if(cfg[1]>=(sizeof(QiFree_Pin)/sizeof(QiFree_Pin[0]))) return -1;
+#if 1
+	io->RCC_APB2Periph = QiFree_RCC_GPIOx[cfg[0]];
+	io->GPIOx = QiFree_GPIOx[cfg[0]];
+	io->Pin = QiFree_Pin[cfg[1]];
+#else
+	io->RCC_APB2Periph = QiFree_RCC_GPIOx[0];
+	io->GPIOx = QiFree_GPIOx[0];
+	io->Pin = QiFree_Pin[8];
+//	io->RCC_APB2Periph = RCC_APB2Periph_GPIOA;
+//	io->GPIOx = GPIOA;
+//	io->Pin = GPIO_Pin_8;
+#endif
+	return 0;
+}

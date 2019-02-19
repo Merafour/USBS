@@ -1,0 +1,13 @@
+.\obj\usbhw.o: usb\usbhw.c
+.\obj\usbhw.o: .\common\inc\LPC17xx.h
+.\obj\usbhw.o: C:\Keil\ARM\RV31\INC\core_cm3.h
+.\obj\usbhw.o: C:\Keil\ARM\RV31\INC\stdint.h
+.\obj\usbhw.o: C:\Keil\ARM\RV31\INC\core_cmInstr.h
+.\obj\usbhw.o: C:\Keil\ARM\RV31\INC\core_cmFunc.h
+.\obj\usbhw.o: .\common\inc\system_LPC17xx.h
+.\obj\usbhw.o: usb\usb.h
+.\obj\usbhw.o: usb\usbcfg.h
+.\obj\usbhw.o: usb\usbreg.h
+.\obj\usbhw.o: usb\usbhw.h
+.\obj\usbhw.o: usb\usbcore.h
+.\obj\usbhw.o: usb\usbuser.h

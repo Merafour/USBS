@@ -1,0 +1,61 @@
+[boot] Initialized SPI port 1 (SENSORS)
+[boot] Initialized SPI port 2 (RAMTRON FRAM)
+[boot] Initialized SPI port 4
+[boot] Initialized SDIO
+[init] Looking for microSD... 
+[init] microSD mounted: /fs/microsd 
+[init] Init script not found: /fs/microsd/etc/rc.txt 
+[init] AUTOSTART mode 
+sercon: Registering CDC/ACM serial driver
+sercon: Successfully registered the CDC/ACM serial driver
+[uorb] ready
+mtd: failed to set bus speed
+param: selected parameter default file /fs/mtd_params
+[init] Params loaded: /fs/mtd_params 
+[rgbled] on I2C bus 2 at 0x55
+[init] RGB Led 
+pca8574: init failed
+ 1:   SYS_USE_IO: match
+ 0:   SYS_AUTOSTART: match
+[init] No autostart 
+[init] Config not found: /fs/microsd/etc/config.txt 
+CRCs match
+[init] PX4IO CRC OK 
+nshterm [16:100]
+commander: starting
+[init] Use PX4IO PWM as primary output 
+[px4io] default PWM output device
+[init] PX4IO started 
+[init] Set PX4IO update rate limit: 400 Hz 
+mavlink_if0: mode: NORMAL
+mavlink_if0: data rate: 1000 Bytes/s, port: /dev/ttyS1, baud: 57600
+[MS5611_SPI] on SPI bus 1 at 3
+<adc> init done
+hmc5883: driver start failed
+[MPU6000] on SPI bus 1 at 4
+[init] Using MPU6000 
+[L3GD20] on SPI bus 1 at 1
+[init] Using L3GD20(H) 
+ver hwcmp match: PX4FMU_V2
+[LSM303D] on SPI bus 1 at 2
+[init] Using LSM303D 
+meas_airspeed: no MS4525 airspeed sensor connected
+ets_airspeed: no ETS airspeed sensor connected
+ets_airspeed: no ETS airspeed sensor connected
+preflight_check [44:100]
+Start sdlog2 at 200Hz 
+[init] Start GPS 
+[gps] starting
+dataman: Initializing..
+dataman: Power on restart
+preflight_check: magnetometer calibration missing or bad - calibrate magnetometer first
+preflight_check: PREFLIGHT CHECK ERROR! TRIGGERING ALARM
+dataman: Initialized, data manager file '/fs/microsd/dataman' size is 101376 bytes
+navigator: Initializing..
+[init] Vehicle type: No autostart ID found 
+navigator: Could not clear geofence
+[init] No addons script: /fs/microsd/etc/extras.txt 
+
+NuttShell (NSH)
+nsh> [Ksdlog2: log buffer size: 22528 bytes
+mavlink_if0: DISABLING HARDWARE FLOW CONTROL

@@ -1,0 +1,23 @@
+The Blinky project is a simple demo program for the NXP 'LPC1768' 
+microcontroller using Keil 'MCB1700' Evaluation Board, compliant 
+to Cortex Microcontroller Software Interface Standard (CMSIS v1.0).
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+ - 8 LEDs blink with speed of 1 second, determined by SysTick Timer
+   working in interrupt mode
+
+The Blinky program is available in different targets:
+  Blinky @ 0x0000:	Blinky code that is run from flash address 0x0000
+  Blinky @ 0x2000:	Blinky code that is run from flash address 0x2000
+
+This sample is intended as a demonstration for NXP's secondary USB bootloader.
+
+This blinky project will verify that the flash contents of the Dummy array.
+
+Note: A full sized 512kb binary image has also been included to test the
+entire flash contents when programmed using the secondary bootloader.
+The filename of this binary: "full_512kb_blinky.bin"
