@@ -5,11 +5,15 @@
 
 -| 
 
- |-Qt ：Qt上位机
+ |- Qt ：Qt上位机
  
- |-Release   : 发布代码，移植文档移植过程中的代码
+ |- Release   : 发布代码，移植文档移植过程中的代码
  
- |-USBS_20150619_对USBS升级 ：通过app升级 bootloader
+ |- USBS_20150619_对USBS升级 ：通过app升级 bootloader
  
- |-USBS_F4 ：F4移植文档
+ |- USBS_F4 ：F4移植文档
+ 
+ |- encrypt.c 采用写0(或写1)方式实现的加密
+ 
+ |- tea.c tea加密算法
  
