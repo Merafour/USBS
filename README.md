@@ -17,3 +17,5 @@
  
  |- tea.c tea加密算法
  
+
+关于最新 encrypt.c中加密的详细说明可查看[仅使用对 flash的写操作实现加密代码的自擦除](https://github.com/Merafour/Bootloader/wiki)。
